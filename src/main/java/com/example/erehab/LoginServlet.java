@@ -10,7 +10,7 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
-        out.println("form method='POST' action='login'");
+        out.println("<form method='POST' action='login'>");
         out.println("Username: <input type='text' name='username'><br>");
         out.println("Password: <input type='password' name='password'><br>");
         out.println("<input type='submit' value='login'>");
