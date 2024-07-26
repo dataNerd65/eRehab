@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-  <h1>Welcome to e-Rehab</h1>
+  <h1>Welcome to e-Rehab portal</h1>
   <p>Your journey to recovery starts here. Monitor your progress and stay on track with our comprehensive tools and support.</p>
 <a href="login">Login</a>
 <br/>
