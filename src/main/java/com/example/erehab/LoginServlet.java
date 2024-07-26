@@ -6,22 +6,23 @@ import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "loginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    private String message;
-
-    public void init() {
-        message = "Hello World!";
-    }
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
-        // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
+        out.println("form method='POST' action='login'");
+        out.println("Username: <input type='text' name='username'><br>");
+        out.println("Password: <input type='password' name='password'><br>");
+        out.println("<input type='submit' value='login'>");
+        out.println("</form>");
         out.println("</body></html>");
     }
-
-    public void destroy() {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        //Authentication logic
+        response.sendRedirect("index.jsp");
     }
+
+
 }
