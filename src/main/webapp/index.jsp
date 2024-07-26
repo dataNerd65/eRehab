@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+  <title>JSP - eRehab</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
+<a href="login">Login</a>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="signup">SignUp</a>
 </body>
 </html>
