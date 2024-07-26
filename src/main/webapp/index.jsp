@@ -7,11 +7,16 @@
 </head>
 <body>
 <div class="container">
+  <img src="images/logo.png" alt="e-Rehab Logo" class="logo">
   <h1>Welcome to e-Rehab portal</h1>
   <p>Your journey to recovery starts here. Monitor your progress and stay on track with our comprehensive tools and support.</p>
-<a href="login">Login</a>
-<br/>
-<a href="signup">SignUp</a>
+  <div class="links">
+    <a href="login">Login</a>
+    <a href="signup">SignUp</a>
+  </div>
 </div>
+<footer>
+  <p>&copy; 2024 e-Rehab. All rights reserved.</p>
+</footer>
 </body>
 </html>
