@@ -1,12 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     margin: 0;
     padding:0;
 
 }
+.container{
+    text-align: center;
+    margin-top: 50px;
+}
+h1{
+    color: black;
+}
+p {
+    color: #000000;
+    margin: 20px 0;
+}
 a {
-    display: block;
+    display: inline-block;
     width: 200px;
     margin: 10px auto;
     padding: 10px;
