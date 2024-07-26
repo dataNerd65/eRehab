@@ -9,12 +9,21 @@ body {
     text-align: center;
     margin-top: 50px;
 }
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: auto;
+}
 h1{
     color: black;
+    font-size: 45px;
 }
 p {
     color: #000000;
     margin: 20px 0;
+    font-size: 23px;
 }
 a {
     display: inline-block;
@@ -29,4 +38,21 @@ a {
 }
 a:hover {
     background-color: bisque;
+}
+.links {
+    display: flex;
+    justify-content: center;
+}
+.links a {
+    margin: 0 10px;
+}
+footer {
+    text-align: center;
+    padding: 2px;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border: 2px solid black;
+    border-radius: 5px;
 }
