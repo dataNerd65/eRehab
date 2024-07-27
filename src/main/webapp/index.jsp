@@ -10,9 +10,10 @@
   <img src="images/logo.png" alt="e-Rehab Logo" class="logo">
   <h1>Welcome to e-Rehab portal</h1>
   <p>Your journey to recovery starts here. Monitor your progress and stay on track with our comprehensive tools and support.</p>
+  <p>Log into the portal to receive personalized communication and use our self-service tools.</p>
   <div class="links">
     <a href="login.jsp">Login</a>
-    <a href="signup.jsp">SignUp</a>
+    <a href="">About us</a>
   </div>
 </div>
 <footer>
