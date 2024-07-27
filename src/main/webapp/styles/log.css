@@ -78,7 +78,7 @@ h2 {
 }
 .input-group input {
     width: 320px;
-    height: 40px;
+    height: 50px;
     font-size: 16px;
     color: #fff;
     padding: 0 5px;
@@ -87,8 +87,10 @@ h2 {
     outline: none;
 }
 .input-group input:focus~label,
-.input-group input:valid~label {
-    top: -5px;
+.input-group input:not(:placeholder-shown)~label {
+    top: 0;
+    transform: translateY(-100%);
+    font-size: 12px;
 }
 .remember {
     margin: -5px 0 15px 5px;
