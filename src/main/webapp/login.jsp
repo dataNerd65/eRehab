@@ -11,7 +11,7 @@
 <body>
 <div class="wrapper">
     <div class="form-wrapper sign-in">
-        <form action="">
+        <form action="/login" method="post">
             <h2>Login</h2>
             <div class="input-group">
                 <input type="text" id="username" required>
