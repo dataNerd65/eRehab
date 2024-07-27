@@ -11,8 +11,8 @@
   <h1>Welcome to e-Rehab portal</h1>
   <p>Your journey to recovery starts here. Monitor your progress and stay on track with our comprehensive tools and support.</p>
   <div class="links">
-    <a href="login">Login</a>
-    <a href="signup">SignUp</a>
+    <a href="login.jsp">Login</a>
+    <a href="signup.jsp">SignUp</a>
   </div>
 </div>
 <footer>
