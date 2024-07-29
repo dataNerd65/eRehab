@@ -6,9 +6,17 @@ public class Main {
     public static void main(String[] args) {
         //loading environment variables in main
         Dotenv dotenv = Dotenv.load();
-        System.setProperty("DB_URL", dotenv.get("DB_URL"));
-        System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));
-        System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
+        String dbUrl = dotenv.get("DB_URL");
+        String dbUsername = dotenv.get("DB_USERNAME");
+        String dbPassword = dotenv.get("DB_PASSWORD");
+
+        //Checking if environment variables are set
+        if (dbUrl == null || dbUsername == null || dbPassword == null) {
+            throw new IllegalArgumentException("Database connection properties are not set");
+        }
+        System.setProperty("DB_URL", dbUrl);
+        System.setProperty("DB_USERNAME", dbUsername);
+        System.setProperty("DB_PASSWORD", dbPassword);
 
         HibernateUtil.testConnection();
         DummyDataInserter.insertDummyData();
