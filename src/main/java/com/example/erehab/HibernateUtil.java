@@ -9,16 +9,27 @@ public class HibernateUtil{
 
     private static SessionFactory buildSessionFactory() {
         try{
-            return new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+            Configuration configuration = new Configuration();
+            configuration.configure("hibernate.cfg.xml");
+
+            //Setting database connection properties from environment variables
+            configuration.setProperty("hibernate.connection.url", System.getProperty("DB_URL"));
+            configuration.setProperty("hibernate.connection.username", System.getProperty("DB_USERNAME"));
+            configuration.setProperty("hibernate.connection.password", System.getProperty("DB_PASSWORD"));
+
+            return configuration.buildSessionFactory();
+
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
     }
 
     public static SessionFactory getSessionFactory() {
+
         return sessionFactory;
     }
     public static void shutdown(){
+
         getSessionFactory().close();
     }
     public static void testConnection() {
