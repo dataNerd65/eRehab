@@ -12,8 +12,8 @@ public class DummyDataInserter {
             transaction = session.beginTransaction();
 
             //Inserting dummy data
-            User user1 = new User("Peter Kiarie", "pkiarie811@gmail.com", "0769916158", "pkiarie811", "peter");
-            User user2 = new User("Jane Wairimu", "jane254doe@gmail.com", "0112233459", "admin_2", "admin_2");
+            User user1 = new User("Caroline Wambui1", "carol_254@gmail.com", "0769988654", "carol81", "carol2");
+            User user2 = new User("Brian Kinyanjui2", "kinya_12@gmail.com", "0745494545", "admin_4", "admin_4");
 
             session.save(user1);
             session.save(user2);
