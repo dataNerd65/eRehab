@@ -1,2 +1,7 @@
-package com.example.erehab;public class Main {
+package com.example.erehab;
+
+public class Main {
+    public static void main(String[] args) {
+        HibernateUtil.testConnection();
+    }
 }
