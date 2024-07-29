@@ -12,10 +12,20 @@ public class HibernateUtil{
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
 
+            //Retrieve environment variables
+            String dbUrl = System.getProperty("DB_URL");
+            String dbUsername = System.getProperty("DB_USERNAME");
+            String dbPassword = System.getProperty("DB_PASSWORD");
+
+            //Checking if environment variables are set
+            if (dbUrl == null || dbUsername == null || dbPassword == null){
+                throw new IllegalArgumentException("Database connection properties are not set.");
+            }
+
             //Setting database connection properties from environment variables
-            configuration.setProperty("hibernate.connection.url", System.getProperty("DB_URL"));
-            configuration.setProperty("hibernate.connection.username", System.getProperty("DB_USERNAME"));
-            configuration.setProperty("hibernate.connection.password", System.getProperty("DB_PASSWORD"));
+            configuration.setProperty("hibernate.connection.url", dbUrl);
+            configuration.setProperty("hibernate.connection.username", dbUsername);
+            configuration.setProperty("hibernate.connection.password", dbPassword);
 
             return configuration.buildSessionFactory();
 
