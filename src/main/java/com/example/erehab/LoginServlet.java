@@ -22,6 +22,8 @@ public class LoginServlet extends HttpServlet {
                     .uniqueResult();
 
             if (user != null && user.getPassword().equals(password)) {
+                HttpSession httpSession = request.getSession();
+                httpSession.setAttribute("user", user);
                 response.sendRedirect("welcome.jsp");
             }else{
                 response.sendRedirect("login.jsp?error=true");
@@ -36,7 +38,6 @@ public class LoginServlet extends HttpServlet {
         } finally {
             session.close();
         }
-        response.sendRedirect("index.jsp");
     }
 
 
