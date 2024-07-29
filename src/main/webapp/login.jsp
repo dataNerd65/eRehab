@@ -11,14 +11,14 @@
 <body>
 <div class="wrapper">
     <div class="form-wrapper sign-in">
-        <form action="/login" method="post">
+        <form action="login" method="post">
             <h2>Login</h2>
             <div class="input-group">
-                <input type="text" id="username" required>
+                <input type="text" id="username" name="username" required>
                 <label for="username">Username</label>
             </div>
             <div class="input-group">
-                <input type="password" id="password" required>
+                <input type="password" id="password" name="password" required>
                 <label for="password">Password</label>
             </div>
             <div class="remember">
@@ -34,6 +34,12 @@
         </form>
     </div>
 </div>
+<%
+    String error = request.getParameter("error");
+    if (error != null) {
+        out.print("<p style='color:red;'>Invalid username or password</p>");
+    }
+%>
 <script src="js/log.js"></script>
 </body>
 </html>
