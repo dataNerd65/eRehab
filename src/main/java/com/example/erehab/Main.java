@@ -11,5 +11,6 @@ public class Main {
         System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
 
         HibernateUtil.testConnection();
+        DummyDataInserter.insertDummyData();
     }
 }
