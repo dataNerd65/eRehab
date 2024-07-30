@@ -5,10 +5,14 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class Main {
     public static void main(String[] args) {
         //loading environment variables in main
-        Dotenv dotenv = Dotenv.load();
-        String dbUrl = dotenv.get("DB_URL");
-        String dbUsername = dotenv.get("DB_USERNAME");
-        String dbPassword = dotenv.get("DB_PASSWORD");
+        String dbUrl = System.getenv("DB_URL");
+        String dbUsername = System.getenv("DB_USERNAME");
+        String dbPassword = System.getenv("DB_PASSWORD");
+
+        //logging the environment variables
+        System.out.println("DB_URL: " + dbUrl);
+        System.out.println("DB_USERNAME: " + dbUsername);
+        System.out.println("DB_PASSWORD: " + dbPassword);
 
         //Checking if environment variables are set
         if (dbUrl == null || dbUsername == null || dbPassword == null) {
@@ -19,6 +23,6 @@ public class Main {
         System.setProperty("DB_PASSWORD", dbPassword);
 
         HibernateUtil.testConnection();
-        DummyDataInserter.insertDummyData();
+        //DummyDataInserter.insertDummyData();
     }
 }
