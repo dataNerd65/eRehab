@@ -1,5 +1,6 @@
 package com.example.erehab;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,10 +13,12 @@ public class HibernateUtil{
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
 
+            Dotenv dotenv = Dotenv.load();
+
             //Retrieve environment variables
-            String dbUrl = System.getenv("DB_URL");
-            String dbUsername = System.getenv("DB_USERNAME");
-            String dbPassword = System.getenv("DB_PASSWORD");
+            String dbUrl = dotenv.get("DB_URL");
+            String dbUsername = dotenv.get("DB_USERNAME");
+            String dbPassword = dotenv.get("DB_PASSWORD");
 
             //logging the environment variables
             System.out.println("DB_URL: " + dbUrl);
