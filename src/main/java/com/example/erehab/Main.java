@@ -1,13 +1,15 @@
 package com.example.erehab;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import jakarta.servlet.ServletContextEvent;
 
 public class Main {
     public static void main(String[] args) {
         //loading environment variables in main
-        String dbUrl = System.getenv("DB_URL");
-        String dbUsername = System.getenv("DB_USERNAME");
-        String dbPassword = System.getenv("DB_PASSWORD");
+        Dotenv dotenv = Dotenv.load();
+        String dbUrl = dotenv.get("DB_URL");
+        String dbUsername = dotenv.get("DB_USERNAME");
+        String dbPassword = dotenv.get("DB_PASSWORD");
 
         //logging the environment variables
         System.out.println("DB_URL: " + dbUrl);
@@ -24,5 +26,14 @@ public class Main {
 
         HibernateUtil.testConnection();
         //DummyDataInserter.insertDummyData();
+
+        //manual trigger of AppContextListener for testing
+        testAppContextListener();
+
+    }
+    private static void testAppContextListener(){
+        AppContextListener listener = new AppContextListener();
+        ServletContextEvent event = null; //mock servletContextEvent
+        listener.contextInitialized(event);
     }
 }
