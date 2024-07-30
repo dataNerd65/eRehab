@@ -13,9 +13,14 @@ public class HibernateUtil{
             configuration.configure("hibernate.cfg.xml");
 
             //Retrieve environment variables
-            String dbUrl = System.getProperty("DB_URL");
-            String dbUsername = System.getProperty("DB_USERNAME");
-            String dbPassword = System.getProperty("DB_PASSWORD");
+            String dbUrl = System.getenv("DB_URL");
+            String dbUsername = System.getenv("DB_USERNAME");
+            String dbPassword = System.getenv("DB_PASSWORD");
+
+            //logging the environment variables
+            System.out.println("DB_URL: " + dbUrl);
+            System.out.println("DB_USERNAME: " + dbUsername);
+            System.out.println("DB_PASSWORD: " + dbPassword);
 
             //Checking if environment variables are set
             if (dbUrl == null || dbUsername == null || dbPassword == null){
